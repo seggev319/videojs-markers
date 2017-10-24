@@ -11,7 +11,7 @@
     global.videojsMarkers = mod.exports;
   }
 })(this, function (_video) {
-  /*! videojs-markers - v0.9.0 - 2017-08-05
+  /*! videojs-markers - v0.9.0 - 2017-10-24
   * Copyright (c) 2017 ; Licensed  */
   'use strict';
 
@@ -173,7 +173,7 @@
         markerDiv.style[key] = setting.markerStyle[key];
       });
       markerDiv.style.left = getPosition(marker) + '%';
-      markerDiv.style.marginLeft = markerDiv.getBoundingClientRect().width / 2 + 'px';
+      markerDiv.style.marginLeft = markerDiv.offsetWidth / 2 + 'px';
 
       // bind click event to seek to marker time
       markerDiv.addEventListener('click', function (e) {
@@ -250,7 +250,7 @@
           markerTip.querySelector('.vjs-tip-inner').innerText = setting.markerTip.text(marker);
           // margin-left needs to minus the padding length to align correctly with the marker
           markerTip.style.left = getPosition(marker) + '%';
-          markerTip.style.marginLeft = -parseFloat(markerTip.getBoundingClientRect().width / 2) + parseFloat(markerDiv.getBoundingClientRect().width / 4) + 'px';
+          markerTip.style.marginLeft = -parseFloat(markerTip.offsetWidth / 2) + parseFloat(markerDiv.offsetWidth / 4) + 'px';
           markerTip.style.visibility = 'visible';
         }
       });

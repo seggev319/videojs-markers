@@ -161,7 +161,7 @@ function registerVideoJsMarkersPlugin(options) {
       markerDiv.style[key] = setting.markerStyle[key];
     });
     markerDiv.style.left = getPosition(marker) + '%';
-    markerDiv.style.marginLeft = markerDiv.getBoundingClientRect().width/2 + 'px';
+    markerDiv.style.marginLeft = markerDiv.offsetWidth/2 + 'px';
 
     // bind click event to seek to marker time
     markerDiv.addEventListener('click', function(e) {
@@ -239,7 +239,7 @@ function registerVideoJsMarkersPlugin(options) {
         // margin-left needs to minus the padding length to align correctly with the marker
         markerTip.style.left = getPosition(marker) + '%';
         markerTip.style.marginLeft = 
-          -parseFloat(markerTip.getBoundingClientRect().width / 2) + parseFloat(markerDiv.getBoundingClientRect().width / 4) + 'px';
+          -parseFloat(markerTip.offsetWidth / 2) + parseFloat(markerDiv.offsetWidth / 4) + 'px';
         markerTip.style.visibility = 'visible';
       }
     });
